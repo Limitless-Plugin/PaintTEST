@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paint</title>
+    <link rel="icon" type="image/png" href="assets/limitless-icon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="paint-app" aria-label="Paint app">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-mark" src="assets/limitless-icon.png" alt="" aria-hidden="true">
+          <span>Paint</span>
+        </div>
+
+        <div class="history-tools" aria-label="History">
+          <button class="icon-button" id="undoButton" type="button" title="Undo" aria-label="Undo">&#8630;</button>
+          <button class="icon-button" id="redoButton" type="button" title="Redo" aria-label="Redo">&#8631;</button>
+        </div>
+
+        <div class="file-tools" aria-label="File tools">
+          <button class="command-button" id="clearButton" type="button">Clear</button>
+          <button class="command-button primary" id="saveButton" type="button">Save PNG</button>
+        </div>
+      </header>
+
+      <section class="ribbon" aria-label="Tools">
+        <div class="tool-group" aria-label="Drawing tools">
+          <button class="tool-button active" data-tool="pencil" type="button" title="Pencil" aria-label="Pencil">Pencil</button>
+          <button class="tool-button" data-tool="eraser" type="button" title="Eraser" aria-label="Eraser">Eraser</button>
+          <button class="tool-button" data-tool="line" type="button" title="Line" aria-label="Line">Line</button>
+          <button class="tool-button" data-tool="rectangle" type="button" title="Rectangle" aria-label="Rectangle">Rect</button>
+          <button class="tool-button" data-tool="ellipse" type="button" title="Ellipse" aria-label="Ellipse">Oval</button>
+          <button class="tool-button" data-tool="fill" type="button" title="Fill" aria-label="Fill">Fill</button>
+        </div>
+
+        <div class="tool-group controls" aria-label="Brush controls">
+          <label class="control" for="sizeInput">
+            <span>Size</span>
+            <input id="sizeInput" type="range" min="1" max="60" value="8">
+          </label>
+
+          <label class="control color-control" for="colorInput">
+            <span>Color</span>
+            <input id="colorInput" type="color" value="#111827">
+          </label>
+        </div>
+
+        <div class="tool-group palette" id="palette" aria-label="Color palette">
+          <button class="swatch active" type="button" data-color="#111827" title="Ink" aria-label="Ink"></button>
+          <button class="swatch" type="button" data-color="#ef4444" title="Red" aria-label="Red"></button>
+          <button class="swatch" type="button" data-color="#f97316" title="Orange" aria-label="Orange"></button>
+          <button class="swatch" type="button" data-color="#facc15" title="Yellow" aria-label="Yellow"></button>
+          <button class="swatch" type="button" data-color="#22c55e" title="Green" aria-label="Green"></button>
+          <button class="swatch" type="button" data-color="#06b6d4" title="Cyan" aria-label="Cyan"></button>
+          <button class="swatch" type="button" data-color="#2563eb" title="Blue" aria-label="Blue"></button>
+          <button class="swatch" type="button" data-color="#a855f7" title="Purple" aria-label="Purple"></button>
+          <button class="swatch" type="button" data-color="#f9fafb" title="White" aria-label="White"></button>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Canvas workspace">
+        <div class="canvas-frame">
+          <canvas id="paintCanvas" width="1200" height="760" aria-label="Drawing canvas"></canvas>
+        </div>
+      </section>
+
+      <footer class="statusbar">
+        <span id="statusText">Ready</span>
+        <span id="sizeText">1200 x 760 px</span>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
